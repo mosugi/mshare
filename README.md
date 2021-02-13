@@ -39,6 +39,12 @@ mshare email https://google.com
 mshare airdrop https://google.com
 ```
 
+## Call from Chrome Extension
+
+This tool can receive arguments from native messaging.
+
+Example: https://github.com/mosugi/ShareToNotes-extension
+
 ## Thanks
 
 https://github.com/vldmrkl/airdrop-cli
