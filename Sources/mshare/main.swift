@@ -70,6 +70,18 @@ class MShare:NSObject,NSApplicationDelegate,NSSharingServiceDelegate{
         return sharingService
     }
     
+    func sharingService(_ sharingService: NSSharingService, sourceWindowForShareItems items: [Any], sharingContentScope: UnsafeMutablePointer<NSSharingService.SharingContentScope>) -> NSWindow? {
+        let window = NSWindow(contentRect: .init(origin: .zero,size: .init(width: 1,height: 1)),
+                             styleMask: [.closable],
+                             backing: .buffered,
+                             defer: false)
+
+        window.center()
+        window.level = .popUpMenu
+
+        return window
+    }
+    
     func share(service:NSSharingService,withItem:String){
         
         let shareItem: Any = withItem.isUrl ? NSURL(string: withItem) as Any : withItem
