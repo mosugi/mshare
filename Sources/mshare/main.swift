@@ -70,6 +70,10 @@ class MShare:NSObject,NSApplicationDelegate,NSSharingServiceDelegate{
         return sharingService
     }
     
+    func sharingService(_ sharingService: NSSharingService, sourceFrameOnScreenForShareItem item: Any) -> NSRect {
+        return NSRect(x: 0, y: 0, width: 400, height: 100)
+    }
+
     func sharingService(_ sharingService: NSSharingService, sourceWindowForShareItems items: [Any], sharingContentScope: UnsafeMutablePointer<NSSharingService.SharingContentScope>) -> NSWindow? {
         let window = NSWindow(contentRect: .init(origin: .zero,size: .init(width: 1,height: 1)),
                              styleMask: [.closable],
