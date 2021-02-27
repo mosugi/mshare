@@ -84,6 +84,14 @@ class MShare:NSObject,NSApplicationDelegate,NSSharingServiceDelegate{
         }
     }
     
+    func sharingService(_ sharingService: NSSharingService, didShareItems items: [Any]) {
+        exit(0)
+    }
+
+    func sharingService(_ sharingService: NSSharingService, didFailToShareItems items: [Any], error: Error) {
+        exit(1)
+    }
+    
 }
 
 struct ChromeExtensionMessage: Codable {
