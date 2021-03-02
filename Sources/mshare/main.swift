@@ -85,11 +85,11 @@ class MShare:NSObject,NSApplicationDelegate,NSSharingServiceDelegate{
     }
     
     func sharingService(_ sharingService: NSSharingService, didShareItems items: [Any]) {
-        exit(0)
+        app.perform(#selector(app.terminate(_:)), with: 0, afterDelay: 1)
     }
 
     func sharingService(_ sharingService: NSSharingService, didFailToShareItems items: [Any], error: Error) {
-        exit(1)
+        app.perform(#selector(app.terminate(_:)), with: 1, afterDelay: 1)
     }
     
 }
